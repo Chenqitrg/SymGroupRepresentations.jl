@@ -2,6 +2,7 @@ module SymGroupRepresentations
 
 using LinearAlgebra
 using AbstractAlgebra
+using TensorKit
 using TensorKitSectors
 using TensorOperations
 using MatrixFactorizations
@@ -10,6 +11,7 @@ using SparseArrays
 export Sym, SNIrrep
 export S3, S4, S5
 export S3Irrep, S4Irrep, S5Irrep
+export FunN
 
 using TensorKitSectors: Group, AbstractIrrep, IrrepTable
 import TensorKitSectors: dim, Nsymbol, Fsymbol, Rsymbol, fusiontensor
@@ -69,4 +71,6 @@ const _allCGCs = (;
 )
 @info "CG coefficients for S3, S4, S5 pre-calculated."
 
+
+include("gen_cache/funN.jl")
 end
